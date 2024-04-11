@@ -1,11 +1,11 @@
 public class Dog extends Animal{
 
     private static int dogCounter = 0;
-    double runDistance = 500;
-    double swimDistance = 10;
 
     public Dog(String name){
         this.name = name;
+        super.runDistance = 500;
+        super.swimDistance = 10;
         increaseAnimalCounter();
         dogCounter++;
     }
