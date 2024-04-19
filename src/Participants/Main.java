@@ -23,7 +23,7 @@ public class Main {
     public static void startContest(ArrayList<Participant> participants, ArrayList<Obstacle> obstacles) {
         for (Participant p : participants) {
             for (Obstacle o : obstacles) {
-                if (!p.overcome(o)) { break; }
+                if (!o.overcome(p)) { break; }
             }
         }
     }

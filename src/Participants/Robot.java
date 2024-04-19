@@ -1,6 +1,6 @@
 package Participants;
 
-public class Robot implements Participant{
+public class Robot implements Participant {
     String name;
     double runDistance;
     double jumpHeight;
@@ -11,33 +11,24 @@ public class Robot implements Participant{
         this.jumpHeight = jumpHeight;
     }
 
-    public void run(Racetrack obstacle) {
+    public boolean run(Racetrack obstacle) {
         if (runDistance >= obstacle.length) {
             System.out.println("Робот " + this.name + " пробіг перешкоду " + obstacle.name + " на дистанції " + obstacle.length);
+            return true;
         } else {
             System.out.println("Робот " + this.name + " не пробіг перешкоду " + obstacle.name + " на дистанції " + obstacle.length + ". Пройдено " + runDistance);
+            return false;
         }
     }
 
-    public void jump(Wall obstacle) {
+    public boolean jump(Wall obstacle) {
         if (jumpHeight >= obstacle.height) {
             System.out.println("Робот " + this.name + " перепригнув перешкоду " + obstacle.name + " висотою " + obstacle.height);
+            return true;
         } else {
             System.out.println("Робот " + this.name + " не перепригнув перешкоду " + obstacle.name + " висотою " + obstacle.height + ", пригнувши " + jumpHeight);
+            return false;
         }
-
     }
 
-    public boolean overcome(Obstacle obstacle) {
-        if (obstacle.getClass() == Racetrack.class) {
-            run((Racetrack) obstacle);
-            return runDistance >= ((Racetrack) obstacle).length;
-        }
-        if (obstacle.getClass() == Wall.class) {
-            jump((Wall) obstacle);
-            return jumpHeight >= ((Wall) obstacle).height;
-        }
-        System.out.println("Невідома перешкода");
-        return false;
-    }
 }

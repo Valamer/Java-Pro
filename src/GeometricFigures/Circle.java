@@ -1,6 +1,6 @@
 package GeometricFigures;
 
-public class Circle implements Geometric{
+public class Circle implements Geometric {
     double diameter;
     public Circle(double diameter) {
         this.diameter = diameter;

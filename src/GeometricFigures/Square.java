@@ -1,6 +1,6 @@
 package GeometricFigures;
 
-public class Square implements Geometric{
+public class Square implements Geometric {
     double side;
     public Square(double side) {
         this.side = side;
